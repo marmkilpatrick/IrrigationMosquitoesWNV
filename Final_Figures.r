@@ -69,7 +69,7 @@ nd3$SE=predict(Fs3,newdata=nd3,se.fit=T)$se.fit
 #Figure 3b
 f3b=ggplot(t3a, aes(y=TAR_COUNT, x=I(APPLIED_WATER_ACREp.001)))+theme_few()+ 
   geom_point(size=2)+
-  geom_point(data=t3a[t3a$DAU_CODE%in%c(89,100,186),],col=c("red","green","blue"),size=4)+
+  geom_point(data=t3a[t3a$DAU_CODE%in%c(89,100,186),],col=c("green","blue","red"),size=4)+
   geom_line(data=nd3,aes(x=I(APPLIED_WATER_ACREp.001),y=10^(pTAR)))+
   geom_ribbon(data=nd3,aes(x=I(APPLIED_WATER_ACREp.001),y=10^(pTAR),
                            ymin=10^(pTAR-SE),ymax=10^(pTAR+SE)),alpha=.1)+
