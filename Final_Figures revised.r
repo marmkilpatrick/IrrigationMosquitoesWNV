@@ -1,5 +1,5 @@
 lapply(c("tidyverse","ggthemes","ggpubr","lme4","nlme","piecewiseSEM"),require,character.only=T) #load packages
-setwd("C:/Marm/Research/WNV/Papers/Irrigation")
+setwd() #insert directory where data files are saved
 
 #Figure 2 Irrigation, Precipitation vs Year
 t2L=read.csv("PRECIP_IRRIGATION_AF_YEAR_MORE2.csv")#Long format
@@ -87,9 +87,6 @@ f3b=ggplot(t3a, aes(y=TAR_COUNT, x=APPLIED_WATER_ACREp.001))+theme_few()+
   annotate(x=.001,y=450,geom="text",label="B",size=5)+
   theme(axis.text.x=element_blank())+
   theme(text=element_text(size=20));f3b
-
-Fig3=ggarrange(f3a,f3b,nrow=2,align="v");Fig3#Figure 3--------------
-ggsave("Figure 3.pdf",Fig3,height=10,width=12)
 
 #Univariate models
 Ts2a=gls(log10(TAR_COUNT)~log10(APPLIED_WATER_ACREp.001),
